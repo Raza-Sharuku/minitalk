@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:03:06 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/13 17:26:45 by razasharuku      ###   ########.fr       */
+/*   Created: 2023/02/01 20:27:14 by sraza             #+#    #+#             */
+/*   Updated: 2023/02/01 20:57:04 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include"libft.h"
 
-int main()
+t_list	*ft_lstnew(void *content)
 {
-    printf("getpid = %d \n", getpid());
-    return (0);
+	t_list	*new;
+
+	new = malloc(sizeof(t_list));
+	if (new == NULL)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:03:06 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/13 17:26:45 by razasharuku      ###   ########.fr       */
+/*   Created: 2023/02/02 16:59:47 by razasharuku       #+#    #+#             */
+/*   Updated: 2023/02/04 21:28:38 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include"libft.h"
 
-int main()
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    printf("getpid = %d \n", getpid());
-    return (0);
+	if (new == NULL || lst == NULL)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	ft_lstlast(*lst)->next = new;
+	return ;
 }

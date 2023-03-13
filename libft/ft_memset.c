@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:03:06 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/13 17:26:45 by razasharuku      ###   ########.fr       */
+/*   Created: 2023/01/12 20:08:12 by razasharuku       #+#    #+#             */
+/*   Updated: 2023/02/09 21:29:45 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include"libft.h"
 
-int main()
+void	*ft_memset(void *b, int c, size_t len)
 {
-    printf("getpid = %d \n", getpid());
-    return (0);
+	unsigned char	uc;
+	unsigned char	*dst;
+
+	dst = (unsigned char *)b;
+	uc = (unsigned char )c;
+	if (len != 0)
+	{
+		while (len-- > 0)
+		{
+			*dst++ = uc;
+		}
+		return (b);
+	}
+	return (b);
 }

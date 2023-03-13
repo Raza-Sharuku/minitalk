@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:03:06 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/13 17:26:45 by razasharuku      ###   ########.fr       */
+/*   Created: 2023/01/10 16:36:10 by sraza             #+#    #+#             */
+/*   Updated: 2023/02/05 13:51:33 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include"libft.h"
 
-int main()
+size_t	ft_strlen(const char *s)
 {
-    printf("getpid = %d \n", getpid());
-    return (0);
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

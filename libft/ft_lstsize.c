@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:03:06 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/13 17:26:45 by razasharuku      ###   ########.fr       */
+/*   Created: 2023/02/01 20:27:19 by sraza             #+#    #+#             */
+/*   Updated: 2023/02/01 21:55:04 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include"libft.h"
 
-int main()
+int	ft_lstsize(t_list *lst)
 {
-    printf("getpid = %d \n", getpid());
-    return (0);
+	int	i;
+
+	i = 0;
+	if (lst == NULL)
+		return (0);
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

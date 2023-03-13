@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:03:06 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/13 17:26:45 by razasharuku      ###   ########.fr       */
+/*   Created: 2023/01/14 20:10:41 by razasharuku       #+#    #+#             */
+/*   Updated: 2023/01/30 23:36:35 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include"libft.h"
 
-int main()
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-    printf("getpid = %d \n", getpid());
-    return (0);
+	size_t	i;
+	size_t	len;
+
+	len = ft_strlen(src);
+	if (dstsize == 0)
+		return (len);
+	if (src)
+	i = 0;
+	if (dstsize != 0)
+	{
+		while (src [i] != '\0' && i < (dstsize - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (len);
 }

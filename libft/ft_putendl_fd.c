@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:03:06 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/13 17:26:45 by razasharuku      ###   ########.fr       */
+/*   Created: 2023/01/26 20:41:47 by razasharuku       #+#    #+#             */
+/*   Updated: 2023/02/08 20:07:36 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include "libft.h"
 
-int main()
+static	void	ft_putchar_fd1(char c, int fd)
 {
-    printf("getpid = %d \n", getpid());
-    return (0);
+	if (fd < 0)
+		return ;
+	write(fd, &c, 1);
+}
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	size_t	i;
+
+	i = 0;
+	if (fd < 0 || s == NULL)
+		return ;
+	while (s[i])
+	{
+		ft_putchar_fd1(s[i], fd);
+		i++;
+	}
+	write(fd, "\n", 1);
 }

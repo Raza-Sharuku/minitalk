@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:03:06 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/13 17:26:45 by razasharuku      ###   ########.fr       */
+/*   Created: 2023/01/13 12:00:03 by razasharuku       #+#    #+#             */
+/*   Updated: 2023/02/08 19:56:45 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include"libft.h"
 
-int main()
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-    printf("getpid = %d \n", getpid());
-    return (0);
+	unsigned char			*d;
+	const unsigned char		*s;
+	size_t					i;
+
+	d = dst;
+	s = src;
+	i = 0;
+	if (d < s)
+	{
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else if (d > s)
+	{
+		i = len;
+		while (i-- > 0)
+			d[i] = s[i];
+	}
+	return (dst);
 }

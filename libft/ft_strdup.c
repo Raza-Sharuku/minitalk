@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:03:06 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/13 17:26:45 by razasharuku      ###   ########.fr       */
+/*   Created: 2023/01/14 20:20:51 by razasharuku       #+#    #+#             */
+/*   Updated: 2023/02/08 19:54:15 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include"libft.h"
 
-int main()
+char	*ft_strdup(char *src)
 {
-    printf("getpid = %d \n", getpid());
-    return (0);
+	char		*t;
+	size_t		len;
+	size_t		i;
+
+	len = ft_strlen(src);
+	t = malloc(sizeof(char) * (len + 1));
+	if (t == NULL)
+		return (NULL);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		t[i] = src[i];
+		i++;
+	}
+	t[i] = '\0';
+	return (t);
 }

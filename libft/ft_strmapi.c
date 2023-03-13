@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 17:03:06 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/13 17:26:45 by razasharuku      ###   ########.fr       */
+/*   Created: 2023/01/21 23:04:24 by razasharuku       #+#    #+#             */
+/*   Updated: 2023/02/08 20:18:47 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include"libft.h"
 
-int main()
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    printf("getpid = %d \n", getpid());
-    return (0);
+	size_t	i;
+	char	*src;
+
+	if (s == NULL || f == NULL)
+		return (NULL);
+	src = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (src == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		src[i] = f(i, s[i]);
+		i++;
+	}
+	src[i] = '\0';
+	return (src);
 }
