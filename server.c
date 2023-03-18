@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:03:02 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/18 19:20:07 by sraza            ###   ########.fr       */
+/*   Updated: 2023/03/18 19:33:54 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-char ft_convert_demical(int num)
+char	ft_convert_demical(int num)
 {
-	int demical;
-	int base;
+	int	demical;
+	int	base;
 
 	demical = 0;
 	base = 1;
-	while(num > 0)
+	while (num > 0)
 	{
 		demical = demical + (num % 10) * base;
 		num = num / 10;
@@ -33,9 +33,9 @@ char ft_convert_demical(int num)
 
 void	ft_handler(int signalType)
 {
-	static int num;
-	static int counter;
-	char c;
+	static int	num;
+	static int	counter;
+	char		c;
 
 	if (signalType == SIGUSR1)
 		num = (num * 10) + 0;
@@ -51,13 +51,12 @@ void	ft_handler(int signalType)
 	}
 }
 
-int main()
+int	main(void)
 {
-	struct sigaction handler;
-	
+	struct sigaction	handler;
+
 	handler.sa_handler = ft_handler;
 	printf("PID = %d\n", getpid());
-
 	sigemptyset(&handler.sa_mask);
 	sigaddset(&handler.sa_mask, SIGUSR1);
 	sigaddset(&handler.sa_mask, SIGUSR2);
@@ -66,5 +65,4 @@ int main()
 	while (1)
 		pause();
 	exit(0);
-
 }

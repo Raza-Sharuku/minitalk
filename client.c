@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:02:55 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/18 19:20:13 by sraza            ###   ########.fr       */
+/*   Updated: 2023/03/18 19:42:14 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <signal.h>
 #include <unistd.h>
 #include <stdlib.h>
-int	ft_atoi(const char *str);
 
 void	ft_convert_signal(unsigned int argv, int pid)
 {
@@ -47,11 +46,10 @@ void	ft_convert_signal(unsigned int argv, int pid)
 	}
 }
 
-
-int main (int argc, char **argv)
+int	main (int argc, char **argv)
 {
-	int i;
-	int pid;
+	int	i;
+	int	pid;
 
 	i = 0;
 	if (argc != 3)
