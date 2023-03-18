@@ -6,7 +6,7 @@
 /*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:02:55 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/18 19:14:22 by sraza            ###   ########.fr       */
+/*   Updated: 2023/03/18 19:20:13 by sraza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	ft_convert_signal(unsigned int argv, int pid)
 		{
 			bit[i] = argv % 2;
 			argv = argv / 2;
-			printf("bit[%d] = %d\n ", i, bit[i]);
 		}
 		else
 			bit[i] = 0;
