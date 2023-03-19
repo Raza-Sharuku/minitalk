@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:02:55 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/18 19:42:14 by sraza            ###   ########.fr       */
+/*   Updated: 2023/03/19 10:31:58 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,21 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+int	ft_atoi(const char *str);
+
+void	push_signal(int bit, int pid)
+{
+	if (bit == 0)
+		kill(pid, SIGUSR1);
+	else if (bit == 1)
+		kill(pid, SIGUSR2);
+	usleep(500);
+}
+
 void	ft_convert_signal(unsigned int argv, int pid)
 {
-	char bit[9];
-	int i;
+	char	bit[9];
+	int		i;
 
 	bit[8] = '\0';
 	i = 7;
@@ -36,17 +47,12 @@ void	ft_convert_signal(unsigned int argv, int pid)
 	i = 0;
 	while (i < 8)
 	{
-		if (bit[i] == 0)
-			kill(pid, SIGUSR1);
-		else if (bit[i] == 1)
-			kill(pid, SIGUSR2);
-		printf("%d ", bit[i]);
+		push_signal(bit[i], pid);
 		i++;
-		usleep(500);
 	}
 }
 
-int	main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	i;
 	int	pid;
@@ -57,7 +63,7 @@ int	main (int argc, char **argv)
 	printf("pid str =  %s\n", argv[1]);
 	pid = ft_atoi(argv[1]);
 	printf("pid str =  %u\n", argv[2][1]);
-	while(argv[2][i])
+	while (argv[2][i])
 	{
 		ft_convert_signal((int)argv[2][i], pid);
 		i++;
