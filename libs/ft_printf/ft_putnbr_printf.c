@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_printf.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 16:36:10 by sraza             #+#    #+#             */
-/*   Updated: 2023/02/18 21:08:31 by sraza            ###   ########.fr       */
+/*   Created: 2023/01/26 20:41:50 by razasharuku       #+#    #+#             */
+/*   Updated: 2023/03/19 12:23:51 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+ssize_t	ft_putnbr_printf(int n, t_nm len)
 {
-	size_t	i;
+	unsigned int	ln;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (n < 0)
+	{
+		len.len = ft_putchar_printf('-', len);
+		ln = -n;
+	}
+	else
+		ln = n;
+	len.len = ft_putunbr_printf(ln, len);
+	return (len.len);
 }

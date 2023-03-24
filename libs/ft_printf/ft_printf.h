@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 20:26:29 by sraza             #+#    #+#             */
-/*   Updated: 2023/02/24 12:29:25 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/03/19 12:32:03 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,15 @@ typedef struct s_nm
 {
 	int			len;
 }				t_nm;
-size_t			ft_strlen(const char *s);
-ssize_t			ft_putchar(char c, t_nm len);
-ssize_t			ft_putstr(char *s, t_nm len);
-ssize_t			ft_putunbr(unsigned int ln, t_nm len);
-ssize_t			ft_putnbr(int n, t_nm len);
+size_t			ft_strlen_printf(const char *s);
+ssize_t			ft_putchar_printf(char c, t_nm len);
+ssize_t			ft_putstr_printf(char *s, t_nm len);
+ssize_t			ft_putunbr_printf(unsigned int ln, t_nm len);
+ssize_t			ft_putnbr_printf(int n, t_nm len);
 ssize_t			ft_hexa(unsigned int num, char x, t_nm len);
 ssize_t			ft_pointer(uintptr_t num, char x, t_nm len);
-ssize_t			ft_strptr(char *s, t_nm len);
-int				ft_printf(const char *format, ...);
-char			*ft_strchr(int c);
-int				main(void);
+ssize_t			ft_strptr_printf(char *s, t_nm len);
+int				ft_printf_printf(const char *format, ...);
+char			*ft_strchr_printf(int c);
 
 #endif

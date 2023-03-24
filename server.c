@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:03:02 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/18 19:33:54 by sraza            ###   ########.fr       */
+/*   Updated: 2023/03/23 12:51:30 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "./libs/ft_printf/ft_printf.h"
+#include "./libs/libft/libft.h"
 
 char	ft_convert_demical(int num)
 {
@@ -56,7 +57,7 @@ int	main(void)
 	struct sigaction	handler;
 
 	handler.sa_handler = ft_handler;
-	printf("PID = %d\n", getpid());
+	ft_printf("PID = %d\n", getpid());
 	sigemptyset(&handler.sa_mask);
 	sigaddset(&handler.sa_mask, SIGUSR1);
 	sigaddset(&handler.sa_mask, SIGUSR2);

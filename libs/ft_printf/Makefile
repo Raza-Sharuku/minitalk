@@ -6,23 +6,23 @@
 #    By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 16:42:18 by sraza             #+#    #+#              #
-#    Updated: 2023/02/24 12:31:17 by razasharuku      ###   ########.fr        #
+#    Updated: 2023/03/19 12:35:25 by razasharuku      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
-SRCS = ft_strlen.c \
-		ft_putchar.c \
-		ft_putstr.c \
-		ft_putunbr.c \
-		ft_putnbr.c \
+SRCS = ft_strlen_printf.c \
+		ft_putchar_printf.c \
+		ft_putstr_printf.c \
+		ft_putunbr_printf.c \
+		ft_putnbr_printf.c \
 		ft_printf.c \
 		ft_hexa.c \
 		ft_pointer.c \
-		ft_strptr.c \
-		ft_strchr.c 
+		ft_strptr_printf.c \
+		ft_strchr_printf.c 
 
 OBJS = ${SRCS:.c=.o}
 

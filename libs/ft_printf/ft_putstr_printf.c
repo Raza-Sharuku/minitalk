@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunbr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_printf.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 20:59:58 by sraza             #+#    #+#             */
-/*   Updated: 2023/02/22 14:49:41 by sraza            ###   ########.fr       */
+/*   Created: 2023/01/26 17:26:17 by razasharuku       #+#    #+#             */
+/*   Updated: 2023/03/19 12:23:31 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-ssize_t	ft_putunbr(unsigned int ln, t_nm len)
+ssize_t	ft_putstr_printf(char *s, t_nm len)
 {
-	if (ln == 0)
-		len.len = ft_putchar('0', len);
-	if (ln <= 9 && ln > 0)
-		len.len = ft_putchar(ln + 48, len);
-	else if (ln > 0)
+	size_t	i;
+
+	i = 0;
+	while (s[i])
 	{
-		len.len = ft_putunbr(ln / 10, len);
-		len.len = ft_putchar(ln % 10 + 48, len);
+		len.len = ft_putchar_printf(s[i], len);
+		i++;
 	}
 	return (len.len);
 }

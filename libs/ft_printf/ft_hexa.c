@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hexa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:43:37 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/02/22 14:48:11 by sraza            ###   ########.fr       */
+/*   Updated: 2023/03/19 12:27:45 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ ssize_t	ft_hexa(unsigned int num, char x, t_nm len)
 	if (x == 'x')
 		hexa = "0123456789abcdef";
 	if (num == 0)
-		len.len = ft_putchar('0', len);
+		len.len = ft_putchar_printf('0', len);
 	if (num <= 15 && num > 0)
-		len.len = ft_putchar(hexa[num], len);
+		len.len = ft_putchar_printf(hexa[num], len);
 	else if (num > 0)
 	{
 		len.len = ft_hexa(num / 16, x, len);
-		len.len = ft_putchar(hexa[num % 16], len);
+		len.len = ft_putchar_printf(hexa[num % 16], len);
 	}
 	return (len.len);
 }

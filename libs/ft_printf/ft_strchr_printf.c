@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr_printf.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 20:41:50 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/02/22 14:49:23 by sraza            ###   ########.fr       */
+/*   Created: 2023/01/14 20:23:03 by razasharuku       #+#    #+#             */
+/*   Updated: 2023/03/19 12:22:25 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-ssize_t	ft_putnbr(int n, t_nm len)
+char	*ft_strchr_printf(int c)
 {
-	unsigned int	ln;
+	char		cc;
+	const char	*s;
 
-	if (n < 0)
+	s = "cdiuxXp";
+	cc = (char)(c);
+	while (*s != '\0')
 	{
-		len.len = ft_putchar('-', len);
-		ln = -n;
+		if (*s == cc)
+			return ((char *)s);
+		s++;
 	}
-	else
-		ln = n;
-	len.len = ft_putunbr(ln, len);
-	return (len.len);
+	if (cc == '\0' && *s == cc)
+		return ((char *)s);
+	return (NULL);
 }

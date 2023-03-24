@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen_printf.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sraza <sraza@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 20:23:03 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/02/22 19:07:59 by sraza            ###   ########.fr       */
+/*   Created: 2023/01/10 16:36:10 by sraza             #+#    #+#             */
+/*   Updated: 2023/03/19 12:22:28 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-char	*ft_strchr(int c)
+size_t	ft_strlen_printf(const char *s)
 {
-	char		cc;
-	const char	*s;
+	size_t	i;
 
-	s = "cdiuxXp";
-	cc = (char)(c);
-	while (*s != '\0')
-	{
-		if (*s == cc)
-			return ((char *)s);
-		s++;
-	}
-	if (cc == '\0' && *s == cc)
-		return ((char *)s);
-	return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
