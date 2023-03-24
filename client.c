@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:02:55 by razasharuku       #+#    #+#             */
-/*   Updated: 2023/03/23 12:48:59 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/03/24 12:18:26 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,7 @@ int	main(int argc, char **argv)
 	i = 0;
 	if (argc != 3)
 		return (0);
-	ft_printf("pid str =  %s\n", argv[1]);
 	pid = ft_atoi(argv[1]);
-	ft_printf("pid str =  %u\n", argv[2][1]);
 	while (argv[2][i])
 	{
 		ft_convert_signal((int)argv[2][i], pid);

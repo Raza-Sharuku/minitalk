@@ -6,7 +6,7 @@
 /*   By: razasharuku <razasharuku@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 20:26:29 by sraza             #+#    #+#             */
-/*   Updated: 2023/03/19 12:32:03 by razasharuku      ###   ########.fr       */
+/*   Updated: 2023/03/24 12:16:29 by razasharuku      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ssize_t			ft_putnbr_printf(int n, t_nm len);
 ssize_t			ft_hexa(unsigned int num, char x, t_nm len);
 ssize_t			ft_pointer(uintptr_t num, char x, t_nm len);
 ssize_t			ft_strptr_printf(char *s, t_nm len);
-int				ft_printf_printf(const char *format, ...);
+int				ft_printf(const char *format, ...);
 char			*ft_strchr_printf(int c);
 
 #endif
